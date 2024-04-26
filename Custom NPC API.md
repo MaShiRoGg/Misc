@@ -33,14 +33,41 @@
 	* 2.18. [timer](#timer-1)
 	* 2.19. [toss](#toss)
 	* 2.20. [tick](#tick-1)
+* 3. [npc](#npc-1)
+	* 3.1. [java.lang.String	executeCommand​(java.lang.String command)](#java.lang.StringexecuteCommandjava.lang.Stringcommand)
+	* 3.2. [INPCAdvanced	getAdvanced()](#INPCAdvancedgetAdvanced)
+	* 3.3. [INPCAi	getAi()](#INPCAigetAi)
+	* 3.4. [INPCDisplay	getDisplay()](#INPCDisplaygetDisplay)
+	* 3.5. [IDialog	getDialog​(int slot)](#IDialoggetDialogintslot)
+	* 3.6. [IFaction	getFaction()](#IFactiongetFaction)
+	* 3.7. [int getHomeX()](#intgetHomeX)
+	* 3.8. [int getHomeY()](#intgetHomeY)
+	* 3.9. [int getHomeZ()](#intgetHomeZ)
+	* 3.10. [INPCInventory	getInventory()](#INPCInventorygetInventory)
+	* 3.11. [INPCJob getJob()](#INPCJobgetJob)
+	* 3.12. [INPCRole	getRole()](#INPCRolegetRole)
+	* 3.13. [INPCStats	getStats()](#INPCStatsgetStats)
+	* 3.14. [IEntityLivingBase getOwner()](#IEntityLivingBasegetOwner)
+	* 3.15. [void setHome​(int x, int y, int z)](#voidsetHomeintxintyintz)
+	* 3.16. [ITimers	getTimers()](#ITimersgetTimers)
+	* 3.17. [void	giveItem​(IPlayer player, IItemStack item)](#voidgiveItemIPlayerplayerIItemStackitem)
+	* 3.18. [void	reset()](#voidreset)
+	* 3.19. [void	say​(java.lang.String message)](#voidsayjava.lang.Stringmessage)
+	* 3.20. [void	sayTo​(IPlayer player, java.lang.String message)](#voidsayToIPlayerplayerjava.lang.Stringmessage)
+	* 3.21. [void	setDialog​(int slot, IDialog dialog)](#voidsetDialogintslotIDialogdialog)
+	* 3.22. [void	setFaction​(int id)](#voidsetFactionintid)
+	* 3.23. [IProjectile	shootItem​(double x, double y,double z, IItemStack item, int accuracy)](#IProjectileshootItemdoublexdoubleydoublezIItemStackitemintaccuracy)
+	* 3.24. [IProjectile	shootItem​(IEntityLivingBase target, IItemStack item, int accuracy)](#IProjectileshootItemIEntityLivingBasetargetIItemStackitemintaccuracy)
+	* 3.25. [void	updateClient()](#voidupdateClient)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->Custom Npc API 的使用
+<!-- /vscode-markdown-toc -->[Custom Npc API官方文档](https://www.kodevelopment.nl/customnpcs/api/1.12.2/) 英文
 
-[Custom Npc API官方文档](https://www.kodevelopment.nl/customnpcs/api/1.12.2/) 英文
+
+
 
 
 
@@ -236,7 +263,7 @@ def damaged(c):
 `c.isAltPressed` 是否Alt键按下(boolean)  
 `c.isCtrlPressed` 是否Ctrl键按下(boolean)  
 `c.isMetaPressed` 是否Windows键按下(boolean)   
-`c.isShiftPressed` 是否Shift键按下(boolean) 
+`c.isShiftPressed` 是否Shift键按下(boolean)  
 `c.key` 按键值(int)  
 [按键对照官方英文网址](https://minecraft.fandom.com/wiki/Key_codes)  
 [按键对照官方中文网址](https://zh.minecraft.wiki/w/%E9%94%AE%E6%8E%A7%E4%BB%A3%E7%A0%81)  
@@ -289,3 +316,89 @@ def damaged(c):
 
 ###  2.20. <a name='tick-1'></a>tick
 每0.5秒触发一次
+
+
+# API函数
+
+##  3. <a name='npc-1'></a>npc
+使用方法举例
+`c.npc.executeCommand("say Hello")`
+`c.npc.say("Hello")`
+
+###  3.1. <a name='java.lang.StringexecuteCommandjava.lang.Stringcommand'></a>java.lang.String	executeCommand​(java.lang.String command)  
+以npc为执行源执行指令 command
+`c.npc.executeCommand("tp @s 100 100 100")`  
+
+###  3.2. <a name='INPCAdvancedgetAdvanced'></a>INPCAdvanced	getAdvanced()  
+获取高级属性  
+
+###  3.3. <a name='INPCAigetAi'></a>INPCAi	getAi()
+获取 npc AI  
+
+###  3.4. <a name='INPCDisplaygetDisplay'></a>INPCDisplay	getDisplay()
+获取 npc 外观属性  
+
+###  3.5. <a name='IDialoggetDialogintslot'></a>IDialog	getDialog​(int slot)
+获取 npc 在对话槽slot的对话  
+
+###  3.6. <a name='IFactiongetFaction'></a>IFaction	getFaction()   
+获取 npc 阵营  
+
+###  3.7. <a name='intgetHomeX'></a>int getHomeX()  
+获取 npc 家位置的 x 坐标  
+
+###  3.8. <a name='intgetHomeY'></a>int getHomeY()  
+获取 npc 家位置的 y 坐标   
+
+###  3.9. <a name='intgetHomeZ'></a>int getHomeZ()  
+获取 npc 家位置的 z坐标  
+
+###  3.10. <a name='INPCInventorygetInventory'></a>INPCInventory	getInventory()
+获取 npc 物品栏
+
+###  3.11. <a name='INPCJobgetJob'></a>INPCJob getJob()
+获取 npc 职业
+
+###  3.12. <a name='INPCRolegetRole'></a>INPCRole	getRole()
+获取 npc 角色
+
+###  3.13. <a name='INPCStatsgetStats'></a>INPCStats	getStats()
+获取 npc 属性
+
+###  3.14. <a name='IEntityLivingBasegetOwner'></a>IEntityLivingBase getOwner()
+获取 npc 跟随的实体
+
+###  3.15. <a name='voidsetHomeintxintyintz'></a>void setHome​(int x, int y, int z)
+设置 npc 家
+
+###  3.16. <a name='ITimersgetTimers'></a>ITimers	getTimers()
+获取 npc 定时器
+
+###  3.17. <a name='voidgiveItemIPlayerplayerIItemStackitem'></a>void	giveItem​(IPlayer player, IItemStack item)  
+给予玩家物品
+
+###  3.18. <a name='voidreset'></a>void	reset() 
+重设 npc 
+
+###  3.19. <a name='voidsayjava.lang.Stringmessage'></a>void	say​(java.lang.String message)
+npc 在聊天栏内说话
+
+###  3.20. <a name='voidsayToIPlayerplayerjava.lang.Stringmessage'></a>void	sayTo​(IPlayer player, java.lang.String message)	
+npc 在聊天栏对着某玩家说话
+
+###  3.21. <a name='voidsetDialogintslotIDialogdialog'></a>void	setDialog​(int slot, IDialog dialog)
+将 npc 对话槽内的 slot 号对话 设置为 新对话 dialog
+
+###  3.22. <a name='voidsetFactionintid'></a>void	setFaction​(int id)
+设置 npc 阵营
+
+###  3.23. <a name='IProjectileshootItemdoublexdoubleydoublezIItemStackitemintaccuracy'></a>IProjectile	shootItem​(double x, double y,double z, IItemStack item, int accuracy)
+向 x, y, z处以 accuracy 的精准度 发射投掷物 item  
+精准度(1~100)
+
+###  3.24. <a name='IProjectileshootItemIEntityLivingBasetargetIItemStackitemintaccuracy'></a>IProjectile	shootItem​(IEntityLivingBase target, IItemStack item, int accuracy)
+向 目标实体 target 以 accuracy 的精准度 发射投掷物 item  
+精准度(1~100)
+
+###  3.25. <a name='voidupdateClient'></a>void	updateClient()
+强制更新npc(默认半秒更新一次)
