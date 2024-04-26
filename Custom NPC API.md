@@ -153,6 +153,7 @@ def damaged(c):
 玩家鼠标左键点击时触发
 
 特殊参数解析:  
+
 `c.target` 玩家左键点击的对象(java.lang.Object)  
 `c.type` 对象类型(int)  
 0: 空气 1:实体 2:方块
@@ -162,6 +163,7 @@ def damaged(c):
 玩家破坏方块时触发
 
 特殊参数解析:  
+
 `c.block` 玩家破坏的方块(IBlock)  
 `c.exp` 破坏方块掉落的经验(int)  
 
@@ -169,24 +171,28 @@ def damaged(c):
 玩家在聊天栏说话时触发
 
 特殊参数解析:  
+
 `c.message` 聊天内容(java.lang.String)   
 
 ###  2.4. <a name='containerClosed'></a>containerClosed
 玩家物品栏/容器关闭时触发
 
 特殊参数解析:  
+
 `c.container` 容器对象(IContainer)   
 
 ###  2.5. <a name='containerOpen'></a>containerOpen
 玩家物品栏/容器打开时触发
 
 特殊参数解析:  
+
 `c.container` 容器对象(IContainer)   
 
 ###  2.6. <a name='damaged-1'></a>damaged
 当玩家受伤时触发  
 
 特殊参数解析:  
+
 `c.damage`  受到的伤害(float)  
 `c.damageSource`  伤害的来源(IDamageSource)  
 `c.source` 伤害的来源对象(IEntity)  
@@ -195,6 +201,7 @@ def damaged(c):
 玩家死亡时触发
 
 特殊参数解析:  
+
 `c.damageSource`  造成死亡的来源(IDamageSource)  
 `c.source` 造成死亡的来源对象(IEntity)  
 `c.type` 造成死亡的类型描述(java.lang.String)
@@ -203,6 +210,7 @@ def damaged(c):
 玩家阵营点数发生变动时触发
 
 特殊参数解析:  
+
 `c.faction` 阵营(IFaction)  
 `c.init` 是否默认对玩家设置了阵营点数(boolean)  
 `c.points` 当前阵营点数(int)  
@@ -215,6 +223,7 @@ def damaged(c):
 鼠标右键按下触发  
 
 特殊参数解析:  
+
 `c.target` 右键的对象(java.lang.Object)  
 `c.type` 右键对象的类型(int)  
 0:空气 1:实体 2:方块  
@@ -223,13 +232,15 @@ def damaged(c):
 键盘按下触发
 
 特殊参数解析:  
+
 `c.isAltPressed` 是否Alt键按下(boolean)  
 `c.isCtrlPressed` 是否Ctrl键按下(boolean)  
 `c.isMetaPressed` 是否Windows键按下(boolean)   
 `c.isShiftPressed` 是否Shift键按下(boolean) 
 `c.key` 按键值(int)  
 [按键对照官方英文网址](https://minecraft.fandom.com/wiki/Key_codes)  
-[按键对照官方中文网址](https://zh.minecraft.wiki/w/%E9%94%AE%E6%8E%A7%E4%BB%A3%E7%A0%81)
+[按键对照官方中文网址](https://zh.minecraft.wiki/w/%E9%94%AE%E6%8E%A7%E4%BB%A3%E7%A0%81)  
+
 
 
 ###  2.12. <a name='kill-1'></a>kill
@@ -256,6 +267,7 @@ def damaged(c):
 玩家拾取一种物品时触发
 
 特殊参数解析:
+
 `c.item` 拾取的物品(IItemStack)
 
 ###  2.17. <a name='rangedLaunched'></a>rangedLaunched
@@ -272,6 +284,7 @@ def damaged(c):
 玩家丢弃一种物品时触发
 
 特殊参数解析:
+
 `c.item` 丢弃的物品(IItemStack)
 
 ###  2.20. <a name='tick-1'></a>tick
